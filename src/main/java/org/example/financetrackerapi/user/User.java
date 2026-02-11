@@ -31,4 +31,16 @@ public class User {
     @CreationTimestamp
     @Column(nullable = false)
     private LocalDateTime createdAt;
+
+    public static User create(String email, String hashPassword) {
+        User user = new User();
+        user.email = email;
+        user.password = hashPassword;
+        user.role = UserRole.USER;
+        return user;
+    }
+
+    public void changeRole(UserRole newRole) {
+        this.role = newRole;
+    }
 }
