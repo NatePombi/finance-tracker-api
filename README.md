@@ -1,18 +1,35 @@
 # Finance Tracker API
 
-A production-style personal finance tracking backend built with Spring Boot.
+A production-style personal finance backend built with Spring Boot, designed with real-world financial domain modeling and scalable architecture principles.
 
 ---
 
-## Purpose
+## Overview
 
-This project demonstrates backend engineering skills beyond CRUD:
+* Domain-driven design
 
-* Domain modelling
-* Financial data consistency
-* Business logic handling
-* Secure authentication
-* Analytics and reporting
+* Multi-account financial modeling
+
+* Secure user-scoped data access
+
+* Ledger-based balance calculation
+
+* Aggregation queries & reporting
+
+* Pagination and filtering
+
+* Clean service-layer architecture
+
+
+The system models real financial relationships:
+
+```
+User
+ ├── Accounts
+ │     └── Transactions
+ └── Categories
+```
+Transactions belong to Accounts, and Accounts belong to Users ensuring strong ownership boundaries and data integrity.
 
 ---
 
@@ -30,13 +47,106 @@ This project demonstrates backend engineering skills beyond CRUD:
 
 ---
 
-## Planned Features
+## Core Features(Implemented)
 
-* User authentication (JWT)
-* Accounts & transactions
-* Categories & budgets
-* Monthly analytics reports
-* Spending insights
+### Authentication
+
+* JWT-based authentication
+
+* User registration & login
+
+* Secure user-scoped queries
+
+### Account Management
+
+* Multiple accounts per user (Checking, Savings, Credit)
+
+* Secure ownership validation
+
+* Ledger-based balance calculation (derived from transactions)
+
+* No stored balance field (financially correct architecture)
+
+### Transaction System
+
+* Transactions linked to accounts
+
+* Category validation against transaction type
+
+* Pagination support
+
+* Date filtering:
+
+  * Between dates
+
+  * From date
+
+  * To date
+
+* Monthly income & expense aggregation
+
+* Category-based monthly summaries
+
+
+### Reporting & Analytics
+
+* Monthly summary report:
+
+  * Total income
+
+  * Total expenses
+
+  * Net balance
+
+* Expense breakdown by category (monthly)
+
+### Architectural Decisions
+
+* Transactions do NOT store User directly (ownership derived via Account)
+
+* Account balances are computed dynamically using aggregation queries
+
+* All repository queries are scoped by account.user
+
+* JOIN FETCH used to prevent N+1 problems
+
+* Service layer handles business validation logic
+
+---
+
+## Current Status
+
+* Core financial domain complete:
+
+* Authentication
+
+* Accounts
+
+* Transactions
+
+* Categories
+
+* Monthly reporting
+
+System supports multi-account financial tracking with proper ownership boundaries.
+
+---
+
+## Next Planned Enhancements
+
+* Budget tracking per category
+
+* Account transfers (account-to-account)
+
+* Global exception handler
+
+* API documentation (OpenAPI / Swagger)
+
+* Docker support
+
+* Test coverage (unit & integration tests)
+
+* Caching optimization for heavy aggregations
 
 ---
 
