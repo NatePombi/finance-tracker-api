@@ -150,7 +150,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    void shouldFailToGetAccountBalance() throws Exception {
+    void shouldFailToGetAccountBalance_NotLoggedIn() throws Exception {
         BalanceResponse response = new BalanceResponse(BigDecimal.valueOf(550));
         when(service.getBalance(any(),any())).thenReturn(response);
 
