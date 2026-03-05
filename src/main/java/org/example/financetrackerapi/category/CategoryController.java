@@ -17,28 +17,28 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @PostMapping
-    public ResponseEntity<CategoryResponse> createCategory(@Valid @RequestBody CategoryRequest categoryRequest, @AuthenticationPrincipal User user) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.create(user,categoryRequest.getCategoryName(),categoryRequest.getCategoryType()));
+    public ResponseEntity<CategoryResponse> createCategory(@Valid @RequestBody CategoryRequest categoryRequest, @AuthenticationPrincipal(expression = "username") String email) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.create(email,categoryRequest.getCategoryName(),categoryRequest.getCategoryType()));
     }
 
     @GetMapping
-    public ResponseEntity<List<CategoryResponse>> getAllCategories(@AuthenticationPrincipal User user) {
-        return ResponseEntity.ok(categoryService.getAll(user));
+    public ResponseEntity<List<CategoryResponse>> getAllCategories(@AuthenticationPrincipal(expression = "username") String email) {
+        return ResponseEntity.ok(categoryService.getAll(email));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CategoryResponse> getById(@PathVariable Long id, @AuthenticationPrincipal User user) {
-        return ResponseEntity.ok(categoryService.getById(user,id));
+    public ResponseEntity<CategoryResponse> getById(@PathVariable Long id, @AuthenticationPrincipal(expression = "username") String email) {
+        return ResponseEntity.ok(categoryService.getById(email,id));
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<CategoryResponse> update(@PathVariable Long id, @Valid @RequestBody CategoryRequest categoryRequest, @AuthenticationPrincipal User user) {
-        return ResponseEntity.ok(categoryService.update(user,id,categoryRequest.getCategoryName(),categoryRequest.getCategoryType()));
+    public ResponseEntity<CategoryResponse> update(@PathVariable Long id, @Valid @RequestBody CategoryRequest categoryRequest, @AuthenticationPrincipal(expression = "username") String email) {
+        return ResponseEntity.ok(categoryService.update(email,id,categoryRequest.getCategoryName(),categoryRequest.getCategoryType()));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id, @AuthenticationPrincipal User user) {
-       categoryService.delete(user,id);
+    public ResponseEntity<Void> delete(@PathVariable Long id, @AuthenticationPrincipal(expression = "username") String email) {
+       categoryService.delete(email,id);
         return ResponseEntity.noContent().build();
     }
 }

@@ -82,9 +82,8 @@ public class AccountIntegrationTest {
 
         mockMvc.perform(post("/accounts")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(mapper.writeValueAsString(request))
-                .with(csrf()))
-                .andExpect(status().isForbidden());
+                .content(mapper.writeValueAsString(request)))
+                .andExpect(status().isUnauthorized());
     }
 
 
@@ -133,9 +132,8 @@ public class AccountIntegrationTest {
         accountRepository.save(account);
         accountRepository.save(account1);
 
-        mockMvc.perform(get("/accounts")
-                        .with(csrf()))
-                .andExpect(status().isForbidden());
+        mockMvc.perform(get("/accounts"))
+                .andExpect(status().isUnauthorized());
 
     }
 
