@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
-@Tag(name = "Account Controller", description = "Operation Related to Account Management")
+@Tag(name = "Accounts", description = "Operation Related to Account Management")
 @RestController
 @RequestMapping("/api/v1/accounts")
 @RequiredArgsConstructor

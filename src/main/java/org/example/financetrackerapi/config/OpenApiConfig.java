@@ -16,7 +16,7 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title("Finance Tracker API")
-                        .description("Personal Finance Tracker backend built with Spring Boot")
+                        .description("A production ready Finance Tracker API with authentication, accounts and transactions")
                         .version("1.0"))
                 .addSecurityItem(new SecurityRequirement().addList("BearerAuth"))
                 .components(new Components()
