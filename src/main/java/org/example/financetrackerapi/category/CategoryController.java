@@ -14,7 +14,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@Tag(name = "Category Controller", description = "Operations related to Category Management")
+@Tag(name = "Category", description = "Operations related to Category Management")
 @RestController
 @RequestMapping("/api/v1/categories")
 @AllArgsConstructor
