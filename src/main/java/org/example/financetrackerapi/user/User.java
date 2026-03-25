@@ -49,6 +49,7 @@ public class User implements UserDetails {
         this.role = newRole;
     }
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_"+ role.toString()));
