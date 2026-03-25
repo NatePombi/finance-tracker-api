@@ -83,7 +83,7 @@ Transactions belong to Accounts, and Accounts belong to Users ensuring strong ow
 - Filter transactions:
   - Between dates
   - From a specific date
-  - Up to a specific date
+  - Up to a specific Date
 
 ### Analytics
 - Monthly income and expense aggregation
@@ -181,4 +181,4 @@ ___
 
 ## Status
 
-In development.
+In development phase.  
