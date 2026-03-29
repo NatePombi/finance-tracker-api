@@ -21,14 +21,23 @@ Thumbs.db
 
 # Env files
 .env
+.env.*
 application-local.yml
 application-dev.yml
+application.properties
 
 # Logs
 logs/
+*.log
 
 # Database
 *.db
 
 # Lombok
 .lombok
+
+# Node (if ever used)
+node_modules/
+
+# Docker
+*.pid

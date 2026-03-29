@@ -188,7 +188,27 @@ GET /api/v1/accounts/{id}
 
 ---
 
-## API Preview
+## API Preview (Live AWS)
+
+![Swagger UI](/.docs/swagger1.png)
+![Swagger UI](/.docs/swagger2.png)
+![Swagger UI](/.docs/swagger3.png)
+
+- Responses
+
+![Swagger UI](/.docs/swagger4.png)
+![Swagger UI](/.docs/swagger5.png)
+![Swagger UI](/.docs/swagger6.png)
+![Swagger UI](/.docs/swagger7.png)
+
+- Authentication 
+
+![Swagger UI](/.docs/swagger8.png)
+![Swagger UI](/.docs/swagger9.png)
+
+---
+
+## API Preview (Local)
 
 ![Swagger UI](/.docs/swaggerScreen2.png)
 
