@@ -135,7 +135,8 @@ swagger UI: http://13.53.122.191:8080/swagger-ui/index.html
 
 ---
 
-## How to Run
+##   How to Run
+
 
 #### Running the Application
 
@@ -238,4 +239,4 @@ ___
 
 ## Status
 
-In development phase.  
+In the development phases.  
