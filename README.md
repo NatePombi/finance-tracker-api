@@ -1,4 +1,4 @@
-# Finance Tracker API
+# Finance Tracker API (AWS Deployed)
 [![codecov](https://codecov.io/gh/NatePombi/finance-tracker-api/graph/badge.svg?token=WSUBYBXDIB)](https://codecov.io/gh/NatePombi/finance-tracker-api)
 ![Java](https://img.shields.io/badge/Java-17-blue)
 ![Build](https://github.com/NatePombi/finance-tracker-api/actions/workflows/test.yml/badge.svg)
@@ -7,8 +7,20 @@
 
 
 
-A production-ready backend API for managing personal finances, including accounts, transactions, and authentication.
-Built with Spring Boot, PostgreSQL, Docker, and Flyway.
+A production-ready RESTful API for managing personal finances, including accounts, transactions, and authentication.
+
+The application is built using Spring Boot and deployed on AWS, making it accessible over the internet. It models real-world financial systems with strong data integrity, scalability, and clean architecture.
+
+---
+
+## Cloud Architecture
+
+Client -> AWS EC2 -> AWS RDS (PostgreSQL Database)
+
+
+- Application hosted on AWS EC2
+- Database managed via AWS RDS
+- Secure configuration using environment variables
 
 ---
 
@@ -53,6 +65,8 @@ Transactions belong to Accounts, and Accounts belong to Users ensuring strong ow
 * ![Docker](https://img.shields.io/badge/Docker-Containerization-2496ED?logo=docker&logoColor=white)
 * ![Docker Compose](https://img.shields.io/badge/Docker%20Compose-Orchestration-2496ED?logo=docker&logoColor=white)
 * ![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?logo=swagger&logoColor=black)
+* ![AWS EC2](https://img.shields.io/badge/AWS-EC2-FF9900?style=for-the-badge&logo=amazonaws)
+* ![AWS RDS](https://img.shields.io/badge/AWS-RDS-527FFF?style=for-the-badge&logo=amazonrds)
 
 ---
 
@@ -112,14 +126,24 @@ Transactions belong to Accounts, and Accounts belong to Users ensuring strong ow
 
 ---
 
-### How to Run
+## Live API
+
+P.S: edit this for your own Public IPs
+
+swagger UI: http://13.53.122.191:8080/swagger-ui/index.html
+
+
+---
+
+## How to Run
 
 #### Running the Application
 
 ### Prerequisites
 - Docker installed
+- AWS Credentials (if Deploying)
 
-### Run with Docker
+### Run Locally
 
 ```bash
   docker compose up --build
@@ -131,6 +155,18 @@ http://localhost:8080
 Swagger UI:
 http://localhost:8080/swagger-ui/index.html
 
+
+---
+
+## Environment Variables
+
+This project uses environment variables for secure configuration:
+
+in application
+
+DB_URL
+DB_USERNAME
+DB_PASSWORD
 
 ---
 
@@ -163,10 +199,11 @@ ___
 
 ## Project Status
 
-✅ Fully functional backend API  
-✅ Dockerized and production-ready  
-✅ Database migrations managed with Flyway  
-✅ Interactive API documentation with Swagger
+✅ Fully functional backend API
+✅ Deployed on AWS
+✅ Dockerized and production-ready
+✅ Database migrations with Flyway
+✅ Interactive API documentation
 
 ---
 
