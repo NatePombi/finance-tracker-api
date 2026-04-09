@@ -9,6 +9,8 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
+import org.example.financetrackerapi.ai.AiResponse;
+import org.example.financetrackerapi.ai.AiService;
 import org.example.financetrackerapi.user.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -110,5 +112,7 @@ public class TransactionController {
                                                                       @Min(1) @Max(12) @RequestParam int month) {
         return ResponseEntity.ok(transactionService.getCategorySummaryResponse(email,year,month));
     }
+
+
 
 }
